@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/agendaty</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">ABDO@raja@</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <mapping class="com.example.Model.ClassesEntity"/>
+        <mapping class="com.example.Model.CoachesEntity"/>
+        <mapping class="com.example.Model.EventsEntity"/>
+        <mapping class="com.example.Model.StudentsEntity"/>
+        <mapping class="com.example.Model.UsersEntity"/>
+        <mapping class="com.example.Model.EventsTypesEntity"/>
+
+    </session-factory>
+
+</hibernate-configuration>
