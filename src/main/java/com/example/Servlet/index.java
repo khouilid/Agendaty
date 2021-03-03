@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "index", value = "/")
@@ -24,15 +25,22 @@ public class index extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         String url = "inde.jsp";
         String email = request.getParameter("email");
         String pwd = request.getParameter("pwd");
 
-        UsersEntity user = Login.loginUser(email, pwd);
+        System.out.println(email);
+        UsersEntity user = (UsersEntity) request.getSession().getAttribute("user");
+
         if (user != null) {
-            request.getSession().setAttribute("user", user);
-            url = "WEB-INF/Views/"+ user.getType() +".jsp";
-        } else {
+            request.getRequestDispatcher("WEB-INF/Views/" + user.getType() + ".jsp").forward(request, response);
+        }
+
+        user = Login.loginUser(email, pwd);
+        if (user != null) {
+            session.setAttribute("user", user);
+            url = "WEB-INF/Views/" + user.getType() + ".jsp";
         }
         request.getRequestDispatcher(url).forward(request, response);
     }

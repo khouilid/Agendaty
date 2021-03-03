@@ -46,8 +46,8 @@ public class Testing {
 //        eventsDAO.update(eventsEntity);
 
 
-        System.out.println(Login.loginUser(" abd@abdo", "a").getUsername());
-        System.out.println(Login.loginUser(" abd@abdo", "ad"));
+        System.out.println(Login.loginUser("abd@abdo", "a").getUsername());
+//        System.out.println(Login.loginUser(" abd@abdo", "ad"));
 //        System.out.println(eventsDAO.delete(6L));
 //
 //        transaction.commit();

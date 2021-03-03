@@ -108,8 +108,9 @@
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="/createNewAccountPersonal"> Personal account </a></li>
-                    <li class="nav-item"><a class="nav-link" href="/CreateNewAccountEnterprise"> Enterprise account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newstudent">New student</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newclass">New class</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newteacher">New teacher</a></li>
                 </ul>
             </div>
 
